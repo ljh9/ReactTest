@@ -24,6 +24,12 @@ function App() {
       </div>
       <h4>{post}</h4>
 
+      <button onClick={()=>{
+        let copy = [...a];
+        copy[0] = '수정수정';
+        b(copy);
+      }}>수정</button>
+
       <div className='list'>
         {/* {rendering()} */}
         {a.map((title, index) => (
@@ -33,9 +39,30 @@ function App() {
         </div>
       ))}
       </div>
+
+      <Modal/>      
       
     </div>
   );
+}
+
+const Modal2 = () =>{
+  return(
+    <div></div>
+  )
+}
+
+function Modal(){
+  return(
+    <>
+      <div className="modal">
+          <h4>제목</h4>
+          <p>날짜</p>
+          <p>상세내용</p>
+      </div>
+      <div></div>
+    </>
+  )
 }
 
 export default App;
